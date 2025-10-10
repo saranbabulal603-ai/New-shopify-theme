@@ -1,0 +1,118 @@
+{% comment %}
+  Image and Text Section
+{% endcomment %}
+
+<section class="custom-image-text-section">
+  <div class="container">
+    <div class="image-text-wrapper {% if block.settings.image_position == 'right' %}reverse{% endif %}">
+      <div class="image-side">
+        <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title | escape }}">
+      </div>
+      <div class="text-side">
+        <h2>{{ block.settings.title }}</h2>
+        <p>{{ block.settings.description }}</p>
+        {% if block.settings.button_text != blank %}
+          <a href="{{ block.settings.button_link }}" class="btn">{{ block.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.custom-image-text-section {
+  padding: 60px 0;
+}
+.custom-image-text-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.image-text-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.image-text-wrapper.reverse {
+  flex-direction: row-reverse;
+}
+.image-side img {
+  width: 100%;
+  border-radius: 12px;
+}
+.text-side {
+  flex: 1;
+}
+.text-side h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+.text-side p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.text-side .btn {
+  background: #000;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.text-side .btn:hover {
+  background: #333;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Image and Text Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Select Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Your Section Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Add a short description about your image or content here."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image + Text Section"
+    }
+  ]
+}
+{% endschema %}
