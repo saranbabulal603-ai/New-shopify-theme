@@ -19,6 +19,14 @@
     fetchpriority="low"
   >
 {%- endunless -%}
+  <link
+    rel="preload"
+    as="font"
+    href="{{ 'NarinBlack.otf' | asset_url }}"
+    type="font/otf"
+    crossorigin
+    fetchpriority="high"
+  >
 {%- unless settings.type_heading_font.system? -%}
   <link
     rel="preload"
