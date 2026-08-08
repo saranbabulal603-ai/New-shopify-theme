@@ -1,5 +1,13 @@
 
 
+@font-face {
+  font-family: 'NarinBlack';
+  src: url('NarinBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -4284,4 +4292,118 @@ text-component {
   .h6.h6 select {
     font-size: max(1rem, 100%);
   }
+}
+
+/* --- Premium Parker-style Editorial Styles --- */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: 'NarinBlack', var(--font-heading--family), sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none;
+  line-height: 1.1 !important;
+}
+
+/* Elegant announcement bar styling */
+.announcement-bar {
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+  font-size: 0.7rem !important;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Sophisticated header styling */
+header-component {
+  border-bottom: 1px solid rgba(var(--color-border-rgb), 0.3);
+}
+
+.header__columns {
+  padding-block: var(--padding-md) !important;
+}
+
+/* Luxury border-based Product cards */
+.product-grid__item, .product-card, .collection-card {
+  transition: all var(--hover-transition-duration) var(--hover-transition-timing);
+}
+
+.product-card {
+  background: var(--color-background);
+  border: 1px solid rgba(var(--color-border-rgb), 0.15);
+  padding: 12px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  border-color: rgba(var(--color-border-rgb), 0.5);
+  box-shadow: 0 10px 25px rgba(var(--color-shadow-rgb), 0.05);
+  transform: translateY(-3px);
+}
+
+/* Fine-tune typography spacing in product details */
+.product-card .price {
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+
+.product-card .product-title {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  font-family: var(--font-body--family);
+  font-weight: 500;
+}
+
+/* Beautiful Collection lists & showcase */
+.collection-card {
+  border: 1px solid rgba(var(--color-border-rgb), 0.15);
+  border-radius: 4px;
+  padding: 10px;
+  background: var(--color-background);
+  overflow: hidden;
+}
+
+.collection-card:hover {
+  border-color: rgba(var(--color-border-rgb), 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(var(--color-shadow-rgb), 0.05);
+}
+
+/* Refined letter spacing and style for Buttons */
+.button, .button-secondary, .button-unstyled {
+  font-family: var(--font-body--family) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  border-radius: 2px !important;
+  padding: 14px 28px !important;
+  transition: all 0.25s ease-in-out !important;
+}
+
+.button:hover, .button-secondary:hover {
+  letter-spacing: 0.15em !important;
+  opacity: 0.9;
+}
+
+/* Delicate variant selectors & swatches */
+.variant-picker__option {
+  border-radius: 2px;
+  border: 1px solid rgba(var(--color-border-rgb), 0.2);
+}
+
+.variant-picker__option:hover {
+  border-color: rgba(var(--color-border-rgb), 0.6);
+}
+
+/* Micro-interactions & animations */
+.zoom-hover {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.zoom-hover:hover {
+  transform: scale(1.05);
 }
